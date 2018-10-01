@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,7 +28,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a href="home" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Home</a>
             </li>
             <li class="nav-item" >
                 <a href="gallery" class="nav-link">Gallery</a>
@@ -38,8 +39,19 @@
             <li class="nav-item">
                 <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">Contact</a>
             </li>
+            <sec:authorize access="isAnonymous()">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#signUp">Sign in</a>
+                </li>
+            </sec:authorize>
             <li class="nav-item">
-                <a href="#" class="nav-link" data-toggle="modal" data-target="#signUp">Sign up</a>
+                <sec:authorize access="isAuthenticated()">
+                    <form action="/logoutME" method="post" class="form-inline my-2 my-lg-0">
+                        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">EXIT</button>
+                            <%--<input type="submit" name="" placeholder="">--%>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                </sec:authorize>
             </li>
         </ul>
     </div>
@@ -66,22 +78,37 @@
         </div>
     </div>
 </div>
-<%--Modal WINDOW: Sign up--%>
+<%--Modal WINDOW: Sign in--%>
 <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="signUpLabel">Modal Title</h5>
+                <h5 class="modal-title" id="signUpLabel">Your Data</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Hello world!!!</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary">Save</button>
+                <div class="container-fluid">
+                    <form action="su" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <div class="form-froup">
+                            <%--@declare id="exampleinputemail"--%>
+                            <label for="exampleInputEmail">Enter your name</label>
+                            <input type="" name="username" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="username">
+                            <small id="emailHelp" class="form-text text-muted">Please, enter your name</small>
+                        </div>
+                        <div class="form-froup">
+                            <%--@declare id="exampleinputemail"--%>
+                            <label for="exampleInputEmail">Enter your password</label>
+                            <input type="" name="password" class="form-control" id="exampleInputEmail" placeholder="password">
+                            <small id="emailHelp" class="form-text text-muted">Please, enter your password</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

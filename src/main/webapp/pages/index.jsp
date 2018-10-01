@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a href="home" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Home</a>
             </li>
             <li class="nav-item" >
                 <a href="gallery" class="nav-link">Gallery</a>
@@ -54,7 +54,6 @@
         </ul>
     </div>
 </nav>
-
 <div class="container-fluid carousel-pudding-0">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -83,7 +82,6 @@
         </a>
     </div>
 </div>
-
 <div class="container-fluid">
     <div class="container">
         <div class="row text-center">
@@ -112,7 +110,6 @@
         </div>
     </div>
 </div>
-
 <%--Modal WINDOW - "Contact"--%>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -134,7 +131,6 @@
         </div>
     </div>
 </div>
-
 <%--Modal WINDOW: Sign in--%>
 <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -153,13 +149,13 @@
                         <%--@declare id="exampleinputemail"--%>
                             <label for="exampleInputEmail">Enter your name</label>
                             <input type="" name="username" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="username">
-                            <small id="emailHelp" class="form-text text-muted">Please, enter your email</small>
+                            <small id="emailHelp" class="form-text text-muted">Please, enter your name</small>
                         </div>
                         <div class="form-froup">
                         <%--@declare id="exampleinputemail"--%>
                             <label for="exampleInputEmail">Enter your password</label>
                             <input type="" name="password" class="form-control" id="exampleInputEmail" placeholder="password">
-                            <small id="emailHelp" class="form-text text-muted">Please, enter your name</small>
+                            <small id="emailHelp" class="form-text text-muted">Please, enter your password</small>
                         </div>
                         <button type="submit" class="btn btn-primary">
                             Submit
@@ -170,7 +166,6 @@
         </div>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
