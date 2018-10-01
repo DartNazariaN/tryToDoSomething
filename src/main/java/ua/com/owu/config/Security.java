@@ -68,9 +68,18 @@ public class Security extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .and()
                 .formLogin()
+                .loginPage("/")
+                .loginProcessingUrl("/su")
+                .successForwardUrl("/successLoginPage")
+                .usernameParameter("username")
+                .passwordParameter("password")
                 .and()
-                .logout().logoutUrl("/logoutME").logoutSuccessUrl("/xxx")
+                .logout().logoutUrl("/logoutME").logoutSuccessUrl("/")
+                .and()
+                .exceptionHandling().accessDeniedPage("/accessDeniedPage")
                 .and()
                 .csrf();
+
+
     }
 }
