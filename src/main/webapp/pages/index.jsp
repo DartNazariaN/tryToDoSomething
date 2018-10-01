@@ -92,8 +92,8 @@
                 <h3>Registration form</h3>
                 <form action="/saveUser" method="post">
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <input type="" name="username" placeholder="">
-                    <input type="" name="password" placeholder="">
+                    <input type="" name="username" placeholder="username">
+                    <input type="" name="password" placeholder="password">
                     <input type="submit" name="Відправити" placeholder="">
                 </form>
                 </sec:authorize>
